@@ -1,0 +1,19 @@
+.MODEL
+.CODE
+ MOV AH,1
+ INT 33
+ MOV CX,8
+ MOV BL,AL
+ MOV BH,0
+ ADD BL,156
+ ADC BH,0
+ MOV DL,'A'
+ ploop:
+  ADD DL,BH
+  DEC CX
+  JNZ ploop
+ MOV AH,2
+ INT 33
+ MOV AH,76
+ INT 33
+END
