@@ -1,0 +1,21 @@
+.MODEL
+.CODE
+ MOV AH,1
+ INT 33
+ MOV BL,AL
+ INT 33
+ MOV DL,'0'
+ CMP AL,BL
+ JA l1
+ SUB BL,AL
+ ADD DL,BL
+ JMP stop
+ l1:
+ SUB AL,BL
+ ADD DL,AL
+ stop:
+ MOV AH,2
+ INT 33
+ MOV AH,76
+ INT 33
+END
