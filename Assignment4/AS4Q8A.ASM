@@ -1,0 +1,17 @@
+.MODEL
+.CODE
+ MOV CX,9
+ MOV AH,1
+ MOV DL,'0'
+ l1:
+ INT 33
+ SUB AL,'a'
+ JNZ l2
+ INC DL
+ l2:
+ LOOP l1
+ MOV AH,2
+ INT 33
+ MOV AH,76
+ INT 33
+END
